@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Itau Unibanco - Agendamento</title>
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css' />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body onload="carregarAgencias()">
+<div id="wrapper">
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<h1><a href="www.itau.com.br"><img src="images/itau.png" width="33%" height="33%"></a></h1>
+            </div>
+            
+            <div id="formulario">
+                <h1><p style="color:cornsilk"><b>Formulário de Agendamento</b></p></h1>
+            </div>
+        </div>
+        
+        <div class="container"><img src="images/img03.png" width="1000" height="40" alt="" /></div>
+        
+		<div id="banner">
+            
+            <div class="content">
+
+                <div>
+                    <form>
+                       
+                       <div>
+                            Nome Completo: <input id="txtNome "type="text" class="form-control" maxlength="100">
+                       </div>
+
+                       <div class="input-group mb-3">
+                            Email: <input id="txtEmail" type="email" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                       </div>
+
+                       <div class="input-group mb-3">
+                            Celular: <input id="txtCelular" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                       </div>
+
+                       <div class="input-group mb-3">
+                            Data: <input id="txtData" type="date" class="form-control" placeholder="dd/mm/yyyy" aria-label="Username" aria-describedby="basic-addon1">
+                       </div>
+
+                       <div class="input-group mb-3">
+                            Horário: <input id="txtHora" type="time" class="form-control" placeholder="hh:mm" aria-label="Username" aria-describedby="basic-addon1">
+                       </div>
+
+                       <div class="input-group">
+                            Observação: <textarea id="txtObservacao" class="form-control" aria-label="With textarea"></textarea>
+                       </div>
+
+                       <div class="input-group mb-3">
+                        Agência: 
+                        <select class="custom-select" id="txtAgencia">
+                          <option selected>Agência</option>
+                          <option value="1">São Paulo - Mooca</option>
+                          <option value="2">São Paulo - Jabaquara</option>
+                          <option value="3">São Paulo - Center Norte</option>
+                        </select>
+                       </div>
+
+                       <br>
+
+                       <button onclick="agendar()" type="submit" class="btn btn-primary">Agendar</button>
+
+                    </form>
+                </div>
+            </div>
+            
+			<div>
+                <img src="images/img03.png" width="1000" height="40" alt="" />
+            </div>
+        </div>
+    </div>	
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
