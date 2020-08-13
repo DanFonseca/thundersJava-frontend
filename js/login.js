@@ -24,10 +24,13 @@ function logar(){
         window.alert("Erro");
     });
 }
+
 function verificaLogin (mensagem){
-    if (mensagem.login.lenght == 9){
-        console.log('é uma racf!');
-    }else {
-        console.log('é uma funcional');
+    if (mensagem.login.contains('@')){
+        console.log('e um e-mail');
+    }else  if (mensagem.login.lenght() == 9){
+        console.log('e uma funcional');
+    }else (mensagem.login.lenght() == 7){
+        console.log('e uma racf');        
     }
 }
