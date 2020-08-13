@@ -1,8 +1,11 @@
 function logar(){
-   var mensagem = {
-       racf:document.getElementById("txtLogin").value,
-       senha:document.getElementById("txtSenha").value
-    }
+    var mensagem = {
+        login: document.getElementById("txtLogin").value,
+        senha: document.getElementById("txtSenha").value
+     }
+  
+    verificaLogin (mensagem);
+
    var cabecalho = {
        method:"POST",
        body:JSON.stringify(mensagem),
@@ -20,5 +23,11 @@ function logar(){
     .catch(err=>{
         window.alert("Erro");
     });
-
+}
+function verificaLogin (mensagem){
+    if (mensagem.login.lenght == 9){
+        console.log('é uma racf!');
+    }else {
+        console.log('é uma funcional');
+    }
 }
