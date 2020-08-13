@@ -1,9 +1,10 @@
 function logar(){
+    window.alert("txtLogin");
     var mensagem = {
         login: document.getElementById("txtLogin").value,
         senha: document.getElementById("txtSenha").value
      }
-  
+     
     verificaLogin(mensagem);
 
    var cabecalho = {
@@ -26,7 +27,8 @@ function logar(){
 }
 
 function verificaLogin(mensagem){
-    if (mensagem.login.contains('@'))
+
+    if (mensagem.login.indexOf('@'))
     {
         console.log('e um e-mail');
     }
