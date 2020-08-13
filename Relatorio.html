@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script type="text/javascript" src="js/usuario.js"></script>
+    <link rel="stylesheet" href="css/Relatorio.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Schedule System</h3>
+            </div>
+            <div class="col-md-6">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                     
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                
+                        <ul class="navbar-nav ml-md-auto">
+                            <li class="nav-item active">
+                                 <a class="nav-link" href="#">Link1 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Link2 <span class="sr-only">(current)</span></a>
+                           </li>
+                           <li class="nav-item active">
+                            <a class="nav-link" href="#">Link3 <span class="sr-only">(current)</span></a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+            </div>
+            <div class="col-md-5">
+                <h3 class="text-primary">Sr. Francisco (franc)</h3>
+            </div>
+            <div class="col-md-5">
+                 
+                <button type="button" class="btn btn-success btn-block active btn-lg">
+                    Logout
+                </button>
+            </div>
+        
+        </div>
+        <div class="row">
+            <div class="col-12">Selecione seu relatório</div>
+            <div class="col-md-2">
+                <form role="form">
+                    
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"/> Agência
+                            <input type="checkbox"/> Data
+                            <input type="checkbox"/> Cliente
+                        </label>
+                    </div> 
+                    
+                </form>
+            </div>
+            <div class="col-md-5">
+                <form role="form">
+                    <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Ag1</option>
+                            <option>Ag2</option>
+                            <option>Ag3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="date" placeholder="Readonly input here..." readonly>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Cliente" readonly>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5">
+                 
+                <button type="button" class="btn btn-success btn-block btn-lg">
+                    Gerar
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="container">
+               
+        <div class="row">
+            <div id="foto" class="col-12">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="dados" class="col-12">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Agência</th>
+								<th class="column2">Data</th>
+								<th class="column3">Cliente</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td class="column1">0002</td>
+									<td class="column2">20/08/2019</td>
+									<td class="column3">Joao</td>
+								</tr>
+								<tr>
+									<td class="column1">0003</td>
+									<td class="column2">13/06/2020</td>
+									<td class="column3">Maria</td>
+								</tr>
+								<tr>
+									<td class="column1">0004</td>
+									<td class="column2">04/05/2020</td>
+									<td class="column3">José</td>
+								</tr>
+															
+								
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
