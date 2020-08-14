@@ -9,7 +9,7 @@ function carregarAgencias(){
 
 function carregarUsuario() {
     var userStr=localStorage.getItem("user");
-    if (!userStr){
+    if (!userStr=="logado"){
         window.location="index.html";
     }else{
         var user = JSON.parse(userStr);
@@ -24,25 +24,13 @@ function carregarUsuario() {
     .then(res => res.json())
     .then(res => {
         localStorage.setItem("user",JSON.stringify(res));
-        window.location="usuario.html";
+        window.location="relatorio.html";
     })
     .catch(err => {
         document.getElementById("meuerro").style.visibility="visible";
     });
 }
  
-function carregar(lista){
-    var srtAgendamentos=
-        for (i=0;i<lista.length;i++){
-            srtAgendamentos+='<tr>'+
-                '<td>'+lista[i].agencia+'</td>'+
-                '<td>'+lista[i].data+'</td>'+
-                '<td>'+lista[i].cliente+'</td>'+
-            '</tr>';
-        }
-    document.getElementById("agendamentos").innerHTML=srtAgendamentos;
-}
-
 function pesquisar(){
 
     var agencia     = document.getElementById("txtAgencia").value;

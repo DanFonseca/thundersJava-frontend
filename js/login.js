@@ -1,5 +1,5 @@
 function logar(){
-    window.alert("txtLogin");
+    window.alert("passei aqui");
     var mensagem = {
         login: document.getElementById("txtLogin").value,
         senha: document.getElementById("txtSenha").value
@@ -19,7 +19,7 @@ function logar(){
     .then(res => res.json())
     .then(res=>{
         localStorage.setItem("logado",JSON.stringify(res));
-        window.location="usuario.html";
+        window.location="relatorio.html";
     })
     .catch(err=>{
         window.alert("Erro");
