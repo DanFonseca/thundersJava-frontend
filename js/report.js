@@ -2,21 +2,27 @@
 
 function gerarRelatorio (){
    
+
    let usuarioLogado = localStorage.getItem("logado");
 
-   
+   if(!usuarioLogado){
+      window.location = 'login.html';
+  }else {
+     console.log('passou');
+  }
    var usuarioJson = JSON.parse(usuarioLogado);
 
         document.getElementById("perfil").innerHTML = 
             "<h3> Usuário: " + usuarioJson.nome + "</h3>";
 
 
-   carregarDados();
+   
 
    let dataAgendamento = document.getElementById("dataAgendamento").value
-   let agencia = document.getElementById("cmbAgencias").value
+   let agencia = document.getElementById("agencia").value
+   console.log(agencia[1]);
    let cliente = document.getElementById("cliente").value
-
+  
 
    if(dataAgendamento == "" && agencia != 0 && cliente== ""){
       if (agencia == 1){
@@ -190,7 +196,7 @@ fetch('http://localhost:8080/agendamentonomeClienteData/'+ cliente +'/'+formatad
 
 }
 
-   
+
 
 //GERACAO DAS TABELAS
 function retornarAgendamentos (resp){
@@ -282,59 +288,8 @@ function retornarAgendamentoPorData (resp){
 
    document.getElementById('relatorio').innerHTML = saida;
 }
-}
-   
 
-//SABRINA.
-function deslogar(){
-  localStorage.removeItem("logado");
-  window.location.href="index.html";
-}
 
-// Função para carregar as agências no combo
-function carregarAgencias() {
-  fetch("http://localhost:8080/agencias")
-      .then(res => res.json())
-      .then(res => preencherAgencias(res));
-}
-
-function preencherAgencias(lista) {
-  var saida = "";
-  for (i = 0; i < lista.length; i++) {
-      saida +=
-          "<option value =  ' " + lista[i].id + " '>" + lista[i].nomeAgencia + "</option>";
-  }
-  document.getElementById("cmbAgencias").innerHTML = saida;
 }
 
 
-function deslogar(){
-   localStorage.removeItem("logado");
-   window.location.href="index.html";
- }
- 
- function carregarDados() {
-   carregarAgencias();
-   //carregarUsuario();
- }
- 
- // Função para carregar as agências no combo
- function carregarAgencias() {
-   fetch("http://localhost:8080/agencias")
-       .then(res => res.json())
-       .then(res => preencherAgencias(res));
- }
- 
- function preencherAgencias(lista) {
-   var saida = "";
-   for (i = 0; i < lista.length; i++) {
-       saida +=
-           "<option value =  ' " + lista[i].id + " '>" + lista[i].nomeAgencia + "</option>";
-   }
-   document.getElementById("cmbAgencias").innerHTML = saida;
- }
- 
- // Função para carregar o usuário logado
-//  function carregarUsuario(){
-        
-//  }
