@@ -1,17 +1,22 @@
 
 
 function gerarRelatorio (){
+   
+   let usuarioLogado = localStorage.getItem("logado");
 
-   if (!localStorage.getItem("logado")){
-      window.location('login.html')
-   }
+   
+   var usuarioJson = JSON.parse(usuarioLogado);
+
+        document.getElementById("perfil").innerHTML = 
+            "<h3> Usuário: " + usuarioJson.nome + "</h3>";
+
+
    carregarDados();
 
    let dataAgendamento = document.getElementById("dataAgendamento").value
    let agencia = document.getElementById("cmbAgencias").value
    let cliente = document.getElementById("cliente").value
 
-   
 
    if(dataAgendamento == "" && agencia != 0 && cliente== ""){
       if (agencia == 1){
@@ -41,6 +46,7 @@ function gerarRelatorio (){
          console.log(res);
          retornarAgendamentos(res)
    })
+   
 }
 
 if(dataAgendamento != "" && agencia == 0 && cliente == ""){
@@ -183,6 +189,7 @@ fetch('http://localhost:8080/agendamentonomeClienteData/'+ cliente +'/'+formatad
 })
 
 }
+
    
 
 //GERACAO DAS TABELAS
