@@ -15,8 +15,8 @@ function carregarUsuario() {
         var user = JSON.parse(userStr);
         document.getElementById("perfil").innerHTML=
         "<h3>"+user.nome+"("+user.racf+")<br>";
-    }
-    
+}
+
     document.getElementById("fotoUsuario").innerHTML="<img src=images/"+user.foto+"width='20%'>";
     
 
@@ -30,6 +30,28 @@ function carregarUsuario() {
         document.getElementById("meuerro").style.visibility="visible";
     });
 }
+
+function gerarPDF(){
+    let form = document.getElementById("agendamentos").innerHTML;
+
+    let janela = window.open('','','widht=800 height=600')
+    janela.document.write('<html> <head>')
+    janela.document.write('<title> PDF </title></head>')
+    janela.document.write('<body>')
+    janela.document.write(form)
+    janela.document.write('</body>')
+    janela.document.close()
+    janela.print()
+}
+
+function gerarExcel(){
+    let form = document.getElementById("agendamentos");
+    var html = form.outerHTML;
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
+    encodeURIComponent.preventDefault();
+}
+
+debugger
  
 function pesquisar(){
 
@@ -65,6 +87,10 @@ function pesquisar(){
        .then(res => gerarRelatorio(res));
     }
 }
+
+
+
+
 
 function gerarRelatorio(lista){
     var saida = 
