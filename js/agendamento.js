@@ -1,6 +1,16 @@
 function agendar() {
-
-
+    //validar campos 
+    var Nome = document.getElementById("txtNome").value;
+    if (Nome == "") {
+        return alert("O campo nome é obrigatório");
+    } 
+     
+    var Email = document.getElementById("txtEmail").value;
+    var Celular = document.getElementById("txtCelular").value;
+    if (Email == "" && Celular == "") {
+        return alert("Informe ao menos um meio de contato: Email ou celular");
+    } 
+    
     // somar 1 dia a data atual
     var hoje = new Date();
     var ano1 = hoje.getFullYear();
@@ -39,9 +49,9 @@ function agendar() {
     }
 
     var mensagem = {
-        nomeCliente: document.getElementById("txtNome").value,
-        emailCliente: document.getElementById("txtEmail").value,
-        celularCliente: document.getElementById("txtCelular").value,
+        nomeCliente: Nome,
+        emailCliente: Email,
+        celularCliente: Celular,
         data: dataFormatada,
         hora: Hora,
         observacao: document.getElementById("txtObservacao").value,
@@ -57,15 +67,15 @@ function agendar() {
             "Content-Type": "application/json"
         }
     }
-    window.alert(cabecalho);
-
+    
     fetch("http://localhost:8080/agendar", cabecalho)
         .then(res => res.json())
         .then(res => {
-            window.alert("Gravado com sucesso");
+            alert("Gravado com sucesso");
+            window.location="index.html";
         })
         .catch(err => {
-            window.alert("Erro");
+            alert("Erro");
         });
 }
 
