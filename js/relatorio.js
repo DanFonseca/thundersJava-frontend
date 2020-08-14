@@ -15,8 +15,8 @@ function carregarUsuario() {
         var user = JSON.parse(userStr);
         document.getElementById("perfil").innerHTML=
         "<h3>"+user.nome+"("+user.racf+")<br>";
-    }
-    
+}
+
     document.getElementById("fotoUsuario").innerHTML="<img src=images/"+user.foto+"width='20%'>";
     
 
@@ -30,6 +30,8 @@ function carregarUsuario() {
         document.getElementById("meuerro").style.visibility="visible";
     });
 }
+
+debugger
  
 function pesquisar(){
 
@@ -65,6 +67,10 @@ function pesquisar(){
        .then(res => gerarRelatorio(res));
     }
 }
+
+
+
+
 
 function gerarRelatorio(lista){
     var saida = 
