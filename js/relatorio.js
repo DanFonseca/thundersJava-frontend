@@ -50,8 +50,6 @@ function gerarExcel(){
     window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
     encodeURIComponent.preventDefault();
 }
-
-debugger
  
 function pesquisar(){
 
