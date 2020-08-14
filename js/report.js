@@ -273,3 +273,61 @@ function retornarAgendamentoPorData (resp){
 }
    
 
+//SABRINA.
+function deslogar(){
+  localStorage.removeItem("logado");
+  window.location.href="index.html";
+}
+
+function carregarDados() {
+  carregarAgencias();
+  carregarUsuario();
+}
+
+// Função para carregar as agências no combo
+function carregarAgencias() {
+  fetch("http://localhost:8080/agencias")
+      .then(res => res.json())
+      .then(res => preencherAgencias(res));
+}
+
+function preencherAgencias(lista) {
+  var saida = "";
+  for (i = 0; i < lista.length; i++) {
+      saida +=
+          "<option value =  ' " + lista[i].id + " '>" + lista[i].nomeAgencia + "</option>";
+  }
+  document.getElementById("cmbAgencias").innerHTML = saida;
+}
+
+
+function deslogar(){
+   localStorage.removeItem("logado");
+   window.location.href="index.html";
+ }
+ 
+ function carregarDados() {
+   carregarAgencias();
+   carregarUsuario();
+ }
+ 
+ // Função para carregar as agências no combo
+ function carregarAgencias() {
+   fetch("http://localhost:8080/agencias")
+       .then(res => res.json())
+       .then(res => preencherAgencias(res));
+ }
+ 
+ function preencherAgencias(lista) {
+   var saida = "";
+   for (i = 0; i < lista.length; i++) {
+       saida +=
+           "<option value =  ' " + lista[i].id + " '>" + lista[i].nomeAgencia + "</option>";
+   }
+   document.getElementById("cmbAgencias").innerHTML = saida;
+ }
+ 
+ // Função para carregar o usuário logado
+ function carregarUsuario(){
+  xxxxxxxxxxxxxxxxxxxxxxxxx      
+ }
