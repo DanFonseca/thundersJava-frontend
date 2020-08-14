@@ -2,6 +2,7 @@
 
 function gerarRelatorio (){
    
+<<<<<<< HEAD
 
    let usuarioLogado = localStorage.getItem("logado");
 
@@ -13,13 +14,26 @@ function gerarRelatorio (){
       "<img alt = 'Imagem não encontrada' width='20%' src= images/" + usuarioJson.foto + ">";*/
         document.getElementById("perfil").innerHTML = 
             "<h3> Usuário: " + usuarioJson.nome + " Racf: " + usuarioJson.racf +"</h3>";
+=======
+   let usuarioLogado = localStorage.getItem("logado");
+
+   
+   var usuarioJson = JSON.parse(usuarioLogado);
+
+        document.getElementById("perfil").innerHTML = 
+            "<h3> Usuário: " + usuarioJson.nome + "</h3>";
+>>>>>>> 3884a60b60a6307901148d25304ab537c413f96a
 
 
    carregarDados();
 
    let dataAgendamento = document.getElementById("dataAgendamento").value
+<<<<<<< HEAD
    let agencia = document.getElementById("agencia").value
    console.log(agencia[1]);
+=======
+   let agencia = document.getElementById("cmbAgencias").value
+>>>>>>> 3884a60b60a6307901148d25304ab537c413f96a
    let cliente = document.getElementById("cliente").value
   }
 
@@ -195,7 +209,11 @@ fetch('http://localhost:8080/agendamentonomeClienteData/'+ cliente +'/'+formatad
 
 }
 
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 3884a60b60a6307901148d25304ab537c413f96a
 
 //GERACAO DAS TABELAS
 function retornarAgendamentos (resp){
