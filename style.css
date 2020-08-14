@@ -24,6 +24,7 @@ h3 {
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
     color: #262626;
+    font-weight: bold;
 }
 
 h1 {
@@ -36,6 +37,7 @@ h2 {
 
 h3 {
     font-size: 1.6em;
+    
 }
 
 p,
@@ -567,4 +569,16 @@ a:hover {}
     top: 120%;
     left: 120%;
     transform: translateY(-80%) translateX(-45%)
+}
+
+.ali2 {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-top: 1px;
+    background-color: gainsboro;
+    position: relative;
+    top: 120%;
+    left: 120%;
+    transform: translateY(-160%) translateX(-45%)
+    
 }
