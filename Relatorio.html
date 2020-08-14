@@ -6,11 +6,11 @@
     <title>Relatório</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script type="text/javascript" src="js/relatorio.js"></script>
+    <script type="text/javascript" src="js/report.js"></script>
     <link rel="stylesheet" href="css/relatorio.css">
 
 </head>
-<body onload="carregarUsuario()">
+<body onload="gerarRelatorio()">
     <div class="container-fluid">
         <div class="col-12">
             <div class="col-6">
@@ -46,29 +46,37 @@
                 </div>
             </div>
             
+
+
+            <!--------------->
             <div class='col-9' >
+
+                
                 <div class="form-inline">
+
                     <div class="custom-control custom-checkbox my-1 mr-sm-2 col-3">
                         <input type="checkbox" class="custom-control-input" id="customControlInline">
                         <label class="custom-control-label" for="customControlInline">Agência</label>
                     </div>
 
-                    <select class="form-control my-1 mr-sm-2 col-6" id="inlineFormCustomSelectPref">
-                      <option selected>Agência</option>
-                      <option value="1">Ag1</option>
-                      <option value="2">Ag2</option>
-                      <option value="3">Ag3</option>
+                    <select id = "agencia" name "agencia" class="form-control my-1 mr-sm-2 col-6" id="inlineFormCustomSelectPref">
+                      <option selected value = "0">Agência</option>
+                      <option value="1">Mooca</option>
+                      <option value="2">Interlagos</option>
+                      <option value="3">Jabaquara</option>
+                      <option value="3">Morumbi</option>
                     </select>
                 </div>
 
                 <form class="form-inline">
+
                     <div class="custom-control custom-checkbox my-1 mr-sm-2 col-3">
                         <input type="checkbox" class="custom-control-input" id="customControlInline2">
                         <label class="custom-control-label" for="customControlInline2">Data</label>
                     </div>
 
                     <div class="form-group my-1 mr-sm-2 col-6">
-                        <input type="date" class="form-control" id="exampleFormControlInput2" placeholder="dd/mm/aaaa">
+                        <input type="date" class="form-control" id="dataAgendamento" placeholder="dd-mm-aaaa">
                     </div>
                 </form>
 
@@ -79,31 +87,24 @@
                     </div>
 
                     <div class="form-group my-1 mr-sm-2 col-6">
-                        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cliente">
+                        <input id = "cliente" type="text" class="form-control" id="exampleFormControlInput3" placeholder="Cliente">
                     </div>
                 </form>
 
             </div>
 
+
+
             <div class="col-3">
-                <button onclick="pesquisar()" type="button" class="btn btn-success btn-block btn-lg">Gerar</button>
+                <button onclick="gerarRelatorio()" type="button" class="btn btn-success btn-block btn-lg">Gerar</button>
             </div>
-
-            <div class="col-12">
-                <h3>Relatorio de agendamentos</h3>
-                <h4 id="agendamentos"></h4>
-                <hr/>
-            </div>
-                          
-
-            <div class="col-12">
-                <div class="my-1 mr-sm-2 col-6"><button onclick="gerarPDF()" type="button" class="btn btn-success btn-block btn-lg">PDF</button></div>
-                <div class="my-1 mr-sm-2 col-6"><button onclick="gerarExcel()" type="button" class="btn btn-success btn-block btn-lg">Excel</button></div>
-            </div>
-            
-
-
         </div>
+
+        <br><br><br>
+        <h3>Artistas Cadastrados</h3>
+        <br>
+
+        <h4 id="relatorio"></h4>
 
         <hr/>
 
