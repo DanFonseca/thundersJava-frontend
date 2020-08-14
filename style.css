@@ -47,17 +47,11 @@ ol {
     line-height: 180%;
 }
 
-ul,
-ol {}
 
 a {
     text-decoration: none;
     color: #2F2F2F;
 }
-
-a:hover {}
-
-#wrapper {}
 
 .container {
     width: 1000px;
@@ -94,8 +88,6 @@ a:hover {}
     color: #FFFFFF;
 }
 
-#logo h1,
-#logo p {}
 
 #logo h1 {
     line-height: 100px;
@@ -222,8 +214,6 @@ a:hover {}
     color: #FFFFFF;
 }
 
-#menu .current_page_item a {}
-
 
 /* Page */
 
@@ -275,8 +265,6 @@ a:hover {}
 .post .meta .posted {
     float: right;
 }
-
-.post .meta a {}
 
 .post .entry {
     padding: 0px 0px 40px 0px;
@@ -381,7 +369,6 @@ a:hover {}
 
 /* Calendar */
 
-#calendar {}
 
 #calendar_wrap {
     padding: 20px;
@@ -429,8 +416,6 @@ a:hover {}
     margin: 0px;
     padding: 0px 0px 0px 20px;
 }
-
-#footer-content a {}
 
 #column1 {
     float: left;
