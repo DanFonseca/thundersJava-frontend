@@ -1,12 +1,17 @@
 
 
 function gerarRelatorio (){
-    
+
+   if (!localStorage.getItem("logado")){
+      window.location('login.html')
+   }
+   carregarDados();
 
    let dataAgendamento = document.getElementById("dataAgendamento").value
-   let agencia = document.getElementById("agencia").value
+   let agencia = document.getElementById("cmbAgencias").value
    let cliente = document.getElementById("cliente").value
 
+   
 
    if(dataAgendamento == "" && agencia != 0 && cliente== ""){
       if (agencia == 1){
@@ -279,11 +284,6 @@ function deslogar(){
   window.location.href="index.html";
 }
 
-function carregarDados() {
-  carregarAgencias();
-  carregarUsuario();
-}
-
 // Função para carregar as agências no combo
 function carregarAgencias() {
   fetch("http://localhost:8080/agencias")
@@ -308,7 +308,7 @@ function deslogar(){
  
  function carregarDados() {
    carregarAgencias();
-   carregarUsuario();
+   //carregarUsuario();
  }
  
  // Função para carregar as agências no combo
@@ -328,6 +328,6 @@ function deslogar(){
  }
  
  // Função para carregar o usuário logado
- function carregarUsuario(){
-  xxxxxxxxxxxxxxxxxxxxxxxxx      
- }
+//  function carregarUsuario(){
+        
+//  }
