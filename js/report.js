@@ -1,12 +1,27 @@
 
 
 function gerarRelatorio (){
-    
+   
+
+   let usuarioLogado = localStorage.getItem("logado");
+
+   if(!usuarioLogado){
+      window.location = 'index.html';
+  }else {
+   var usuarioJson = JSON.parse(usuarioLogado);
+      /* document.getElementById("foto").innerHTML =
+      "<img alt = 'Imagem não encontrada' width='20%' src= images/" + usuarioJson.foto + ">";*/
+        document.getElementById("perfil").innerHTML = 
+            "<h3> Usuário: " + usuarioJson.nome + " Racf: " + usuarioJson.racf +"</h3>";
+
+
+   carregarDados();
 
    let dataAgendamento = document.getElementById("dataAgendamento").value
    let agencia = document.getElementById("agencia").value
+   console.log(agencia[1]);
    let cliente = document.getElementById("cliente").value
-
+  }
 
    if(dataAgendamento == "" && agencia != 0 && cliente== ""){
       if (agencia == 1){
@@ -36,6 +51,7 @@ function gerarRelatorio (){
          console.log(res);
          retornarAgendamentos(res)
    })
+   
 }
 
 if(dataAgendamento != "" && agencia == 0 && cliente == ""){
@@ -178,7 +194,8 @@ fetch('http://localhost:8080/agendamentonomeClienteData/'+ cliente +'/'+formatad
 })
 
 }
-   
+
+
 
 //GERACAO DAS TABELAS
 function retornarAgendamentos (resp){
@@ -279,11 +296,6 @@ function deslogar(){
   window.location.href="index.html";
 }
 
-function carregarDados() {
-  carregarAgencias();
-  carregarUsuario();
-}
-
 // Função para carregar as agências no combo
 function carregarAgencias() {
   fetch("http://localhost:8080/agencias")
@@ -297,7 +309,7 @@ function preencherAgencias(lista) {
       saida +=
           "<option value =  ' " + lista[i].id + " '>" + lista[i].nomeAgencia + "</option>";
   }
-  document.getElementById("cmbAgencias").innerHTML = saida;
+  document.getElementById("agencia").innerHTML = saida;
 }
 
 
@@ -308,7 +320,7 @@ function deslogar(){
  
  function carregarDados() {
    carregarAgencias();
-   carregarUsuario();
+   //carregarUsuario();
  }
  
  // Função para carregar as agências no combo
@@ -328,6 +340,6 @@ function deslogar(){
  }
  
  // Função para carregar o usuário logado
- function carregarUsuario(){
-  xxxxxxxxxxxxxxxxxxxxxxxxx      
- }
+//  function carregarUsuario(){
+        
+//  }
