@@ -18,9 +18,7 @@ function gerarRelatorio() {
 
    if (dataAgendamento == "" && agencia != 0 && cliente == "") {
 
-      let agencia = document.getElementById("agencia").options[parseInt(agencia, 10)].text
-
-      fetch('http://localhost:8080/agendamentoNomeAgencia/' + agencia)
+      fetch('http://localhost:8080/agendamentoNomeAgencia/' + devolveAgencia(agencia))
          .then(res => res.json())
          .then(res => {
             console.log(res);
@@ -77,10 +75,7 @@ function gerarRelatorio() {
 
    //Nome agencia e data
    if (dataAgendamento != "" && agencia != 0 && cliente == "") {
-
-      let agencia = document.getElementById("agencia").options[parseInt(agencia, 10)].text
       
-
       //Converção na formatação de data.
       var Data = dataAgendamento;
       var ano = Data.substring(0, 4);
@@ -97,7 +92,7 @@ function gerarRelatorio() {
 
       let formatado = data.toLocaleDateString("pt-BR").split("/")[0] + "-" + data.toLocaleDateString("pt-BR").split("/")[1] + "-" + data.toLocaleDateString("pt-BR").split("/")[2]
 
-      fetch('http://localhost:8080/agendamentoAgenciaAndData/' + agencia + '/' + formatado)
+      fetch('http://localhost:8080/agendamentoAgenciaAndData/' + devolveAgencia(agencia) + '/' + formatado)
          .then(res => res.json())
          .then(res => {
             console.log(res);
@@ -111,7 +106,7 @@ function gerarRelatorio() {
 
    //Nome agencia e nome cliente
    if (dataAgendamento == "" && agencia != 0 && cliente != "") {
-
+      
       if (agencia == 1) {
          agencia = 'Mooca';
       } else if (agencia == 2) {
@@ -123,7 +118,7 @@ function gerarRelatorio() {
       }
 
 
-      fetch('http://localhost:8080/agendamentoAgenciaCliente/' + agencia + '/' + cliente + '')
+      fetch('http://localhost:8080/agendamentoAgenciaCliente/' + devolveAgencia(agencia) + '/' + cliente + '')
          .then(res => res.json())
          .then(res => {
             console.log(res);
@@ -163,6 +158,9 @@ function gerarRelatorio() {
 }
 
 
+function devolveAgencia (agencia){
+  return document.getElementById("agencia").options[parseInt(agencia, 10)].text
+}
 
 //GERACAO DAS TABELAS
 function retornarAgendamentos(resp) {
@@ -240,7 +238,7 @@ function retornarAgendamentoPorAgencia(resp) {
 
          "<td>" + agendamentos.observacao + "</td>" +
 
-         "<td>" + resp[0].nomeAgencia + "</td>"+
+         "<td>" + resp[0].nomeAgencia + "</td>" +
 
          "</tr>"
 
