@@ -1,4 +1,5 @@
 function agendar() {
+ 
     //validar campos 
     var Nome = document.getElementById("txtNome").value;
     if (Nome == "") {
@@ -82,16 +83,12 @@ function agendar() {
 // função para listar todas as agências cadastradas usando o método GET
 
 function carregarAgencias() {
-
-
     fetch("http://localhost:8080/agencias")
         .then(res => res.json())
         .then(res => preencherAgencias(res));
-
 }
 
 function preencherAgencias(lista) {
-
     var saida = "";
 
     for (i = 0; i < lista.length; i++) {
